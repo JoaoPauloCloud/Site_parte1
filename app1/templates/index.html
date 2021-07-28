@@ -1,0 +1,43 @@
+{% load static %}
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="utf-8">
+		<title>Atividade Avaliativa Parte 1</title>
+
+				<meta name="description" content="Free Bootstrap 4 Theme by uicookies.com">
+		<meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600|Montserrat:200,300,400" rel="stylesheet">
+      <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/ionicons/css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/law-icons/font/flaticon.css' %}">
+
+    <link rel="stylesheet" href="{% static 'fonts/fontawesome/css/font-awesome.min.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick-theme.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/helpers.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      <!-- {% bootstrap_css %} -->
+
+	</head>
+	<body style="background-image: url({% static 'images/1900x1200_img_7.jpg' %})">
+
+
+	<h1 class="mt-0 heading-border-top light font-weight-normal text-white">Lista de Alunos</h1><br>
+    <table border="3">
+
+			<tbody>
+				{% for aluno in alunos %}
+				<tr>
+				<td class="col-md-6  order-md-1"><h3><a href="{% url 'aluno' aluno.id %}">{{ aluno.nome }}</a></h3></td>
+				</tr>
+				{% endfor %}
+			</tbody>
+	</table>
+	</body>
+</html>
